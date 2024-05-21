@@ -1,6 +1,6 @@
 <?php
 
-$config = require('config.php');
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
 // Get filter paramerters
@@ -27,4 +27,4 @@ $totalPages = ceil($totalRecipes / $limit);
 $difficultyLevels = $db->getAllDifficultyLevels();
 $categories = $db->getAllCategories();
 
-require "views/recipes.view.php";
+require view("recipes/recipes.view.php");

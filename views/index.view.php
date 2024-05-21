@@ -12,7 +12,7 @@
         <a href="/recetario-php/recipe?id=<?php echo $recipe['id']; ?>" class="hover:shadow-lg">
             <div class="bg-white rounded-md overflow-hidden relative shadow-md">
                 <div>
-                    <img class="w-full h-48 object-cover" src="<?php echo $recipe['image']; ?>"
+                    <img class="w-full h-48 object-cover" src="<?php echo '../img/' . $recipe['image']; ?>"
                         alt="<?php echo $recipe['name']; ?>">
                 </div>
                 <div class="p-4">

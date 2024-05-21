@@ -1,10 +1,10 @@
 <?php
 
-$config = require('config.php');
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
 
 $recipes = $db->getLastFiveRecipes();
 // dd($recipes);
 
-require "views/index.view.php";
+require view("index.view.php");

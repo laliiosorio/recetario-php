@@ -1,9 +1,8 @@
 <?php
 
-$config = require('config.php');
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
-$heading = 'Recipe';
 $recipeId = $_GET['id'];
 
 if (!isset($recipeId)) {
@@ -11,11 +10,10 @@ if (!isset($recipeId)) {
 }
 
 $recipe = $db->getOneRecipe($recipeId);
-// dd($recipe);
 
 if (!$recipe) {
     abort(404);
 }
 
 
-require "views/recipe.view.php";
+require view("recipes/recipe.view.php");

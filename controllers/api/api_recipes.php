@@ -1,6 +1,6 @@
 <?php
 
-$config = require('config.php');
+$config = require base_path('config.php');
 $db = new Database($config['database']);
 
 // Get the page number from the URL
@@ -10,8 +10,6 @@ $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $limit = 10;
 $offset = ($page - 1) * $limit;
 $recipes = $db->getAllRecipes($limit, $offset);
-
-// dd($recipes);
 
 // Set headers for JSON response
 header('Content-Type: application/json');
