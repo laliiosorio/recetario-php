@@ -1,11 +1,17 @@
 <?php require 'views/partials/head.php' ?>
 <?php require 'views/partials/nav.php' ?>
 
+<?php
+$baseURL = '/~losorioortega3';
+// $baseURL = '/recetario-php';
+
+?>
+
 <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
     <h1 class="text-3xl font-bold mb-4">Recetas</h1>
 
     <!-- Filtros -->
-    <form action="/recetario-php/recipes" method="GET" class="flex flex-col my-10 p-6 bg-white rounded-md">
+    <form action="<?= $baseURL ?>/recipes" method="GET" class="flex flex-col my-10 p-6 bg-white rounded-md">
         <div class="flex items-center justify-between">
             <!-- Opciones de ordenamiento -->
             <div class="flex items-center gap-2">
@@ -59,7 +65,7 @@
             $instruction_words = str_word_count($recipe['instructions'], 1);
             $instruction_preview = implode(' ', array_slice($instruction_words, 0, 30));
             ?>
-        <a href="/recetario-php/recipe?id=<?php echo $recipe['id']; ?>" class="hover:shadow-lg">
+        <a href="<?= $baseURL ?>/recipe?id=<?php echo $recipe['id']; ?>" class="hover:shadow-lg">
             <div class="bg-white rounded-md overflow-hidden relative shadow-md">
                 <div>
                     <img class="w-full h-48 object-cover" src="<?php echo 'img/' . $recipe['image']; ?>"

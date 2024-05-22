@@ -1,8 +1,11 @@
 <?php
 session_start();
 
+
 if (isset($_SESSION['username'])) {
-    header('Location: /recetario-php/');
+    // header('Location: /recetario-php/');
+
+    header("Location: /~losorioortega3/");
     exit;
 }
 
@@ -23,7 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         if ($user && password_verify($password, $user['password'])) {
             $_SESSION['username'] = $user['username'];
-            header('Location: /recetario-php/');
+            // header('Location: /recetario-php/');
+
+            header('Location: /~losorioortega3/');
             exit;
         } else {
             $error = 'Invalid credentials. Please try again.';

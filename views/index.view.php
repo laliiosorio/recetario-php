@@ -1,6 +1,11 @@
 <?php require('partials/head.php') ?>
 <?php require('partials/nav.php') ?>
 
+<?php
+$baseURL = '/~losorioortega3';
+// $baseURL = '/recetario-php';
+?>
+
 <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
     <h1 class="text-3xl font-bold mb-4">Últimas Recetas</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -9,7 +14,7 @@
             $instruction_words = str_word_count($recipe['instructions'], 1);
             $instruction_preview = implode(' ', array_slice($instruction_words, 0, 30));
             ?>
-        <a href="/recetario-php/recipe?id=<?php echo $recipe['id']; ?>" class="hover:shadow-lg">
+        <a href="<?= $baseURL ?>/recipe?id=<?php echo $recipe['id']; ?>" class="hover:shadow-lg">
             <div class="bg-white rounded-md overflow-hidden relative shadow-md">
                 <div>
                     <img class="w-full h-48 object-cover" src="<?php echo 'img/' . $recipe['image']; ?>"

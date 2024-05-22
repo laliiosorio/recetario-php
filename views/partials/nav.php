@@ -1,5 +1,7 @@
   <?php
-    $baseURL = '/recetario-php';
+    $baseURL = '/~losorioortega3';
+    // $baseURL = '/recetario-php';
+
     if (session_status() === PHP_SESSION_NONE) {
         session_start();
     }
