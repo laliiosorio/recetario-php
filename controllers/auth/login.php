@@ -2,14 +2,15 @@
 session_start();
 
 if (isset($_SESSION['username'])) {
-    header('Location: /');
+    header('Location: /recetario-php/');
     exit;
 }
 
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $config = require base_path('config.php');
+    $config = require 'config.php';
+
     $db = new Database($config['database']);
 
     $username = trim($_POST['username']);
@@ -20,11 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $statement = $db->query($query, [':username' => $username]);
         $user = $statement->fetch();
 
-        // dd($username);
-
         if ($user && password_verify($password, $user['password'])) {
             $_SESSION['username'] = $user['username'];
-            header('Location: /');
+            header('Location: /recetario-php/');
             exit;
         } else {
             $error = 'Invalid credentials. Please try again.';

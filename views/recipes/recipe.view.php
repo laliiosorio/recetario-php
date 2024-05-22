@@ -1,11 +1,11 @@
-<?php require base_path('views/partials/head.php') ?>
-<?php require base_path('views/partials/nav.php') ?>
+<?php require 'views/partials/head.php' ?>
+<?php require 'views/partials/nav.php' ?>
 
 <main class="min-h-dvh md:flex justify-center items-center">
     <?php if (!empty($recipe)) : ?>
     <article class="bg-[#fff] md:my-[5rem] md:py-8 pb-8 md:rounded-xl md:max-w-screen-md">
         <picture>
-            <img src="<?php echo '../img/' . $recipe['image']; ?>" alt="<?php echo $recipe['name']; ?>" width="1312"
+            <img src="<?php echo 'img/' . $recipe['image']; ?>" alt="<?php echo $recipe['name']; ?>" width="1312"
                 height="600" class="md:max-w-[90%] md:mx-auto md:rounded-xl" />
         </picture>
         <div class="px-8 font-outfit text-wenge-brown">
@@ -67,4 +67,4 @@
     <?php endif; ?>
 </main>
 
-<?php require base_path('views/partials/footer.php') ?>
+<?php require 'views/partials/footer.php' ?>

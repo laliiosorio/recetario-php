@@ -3,7 +3,8 @@ session_start();
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $config = require base_path('config.php');
+    $config = require 'config.php';
+
     $db = new Database($config['database']);
 
     $username = trim($_POST['username']);

@@ -6,7 +6,8 @@ if (!isset($_SESSION['username'])) {
     exit;
 }
 
-$config = require base_path('config.php');
+$config = require 'config.php';
+
 $db = new Database($config['database']);
 $error = '';
 $success = '';
