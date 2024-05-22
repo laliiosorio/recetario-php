@@ -10,4 +10,5 @@ return [
     '/login' => 'controllers/auth/login.php',
     '/logout' => 'controllers/auth/logout.php',
     '/signup' => 'controllers/auth/signup.php',
+    '/profile' => 'controllers/user/profile.php',
 ];
